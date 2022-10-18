@@ -1,13 +1,14 @@
 <template>
   <el-menu
       :default-active="activeIndex"
-      class="el-menu-demo header"
+      class="header el-menu-demo"
       mode="horizontal"
       @select="handleSelect"
       background-color="#f8f8f8"
   >
     <div class="flex-grow" />
-    <el-menu-item index="1">Processing Center</el-menu-item>
+    <el-menu-item index="live">生活</el-menu-item>
+    <el-menu-item index="tech">技术</el-menu-item>
     <el-sub-menu index="2">
       <template #title>Workspace</template>
       <el-menu-item index="2-1">item one</el-menu-item>
@@ -59,5 +60,6 @@ export default {
 .header{
   top: 0;
   left: 0;
+  font-size: 100px;
 }
 </style>
