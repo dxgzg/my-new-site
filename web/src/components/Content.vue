@@ -6,11 +6,11 @@
 
 
     <div class="title">
-      First article
+      First article第一篇文章
     </div>
 
     <div class="content">
-        hello world!
+        hello world!你好~
     </div>
 
   </div>
@@ -30,17 +30,21 @@ export default {
 }
 
 .list-title{
-
+  margin-top: 30px;
+  font-family: Georgia;
 }
 
 .title {
-  margin: 0 auto;
+  margin: 20px auto 5px;
   width: 500px;
-  font-size: 20px;
+  font-size: 25px;
+  font-weight: 600;
+  font-family: PingFang SC;
 }
 
 .content{
   width: 500px;
   margin: 0 auto;
+  font-size: 18px;
 }
 </style>
