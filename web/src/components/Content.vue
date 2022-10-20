@@ -4,18 +4,36 @@
       LIFE
     </h1>
 
-
-    <div class="title-inner">
+    <div class="title-content">
       <h3 class="title">
         First article第一篇文章两只老虎两只老虎跑得快
       </h3>
-    </div>
+      <div class="content-inner">
 
-    <div class="content-inner">
+        <p class="content">
+          hello world!你好~
+        </p>
 
-      <p class="content">
-        hello world!你好~
-      </p>
+      </div>
+
+      <h3 class="title">
+        First article第二篇文章两只老虎两只老虎跑得快
+      </h3>
+      <div class="content-inner">
+
+        <p class="content">
+          hello world!你好~
+        </p>
+
+        <div class="footer">
+
+          <el-icon>
+            <Calendar />
+          </el-icon>
+          <time>
+          2022-10-20 13:07</time>
+        </div>
+      </div>
 
     </div>
 
@@ -29,42 +47,44 @@ export default {
 </script>
 
 <style scoped>
-.main-inner{
+.main-inner {
   width: 800px;
   margin: 0 auto;
-  /*text-align: center;*/
 }
 
-.list-title{
+.list-title {
   margin-top: 30px;
   margin-left: 30px;
   text-align: center;
   font-family: Georgia;
 }
 
-.title-inner{
-  /*margin: 30px auto 5px;*/
-  margin-left: 30px;
-  margin-top: 5px;
+.title-content {
+  margin-left: 100px;
+  margin-top: 20px;
   min-width: 500px;
 }
 
 .title {
   font-size: 25px;
   font-weight: 600;
-  font-family: PingFang SC;
+ font-family:  inherit;
+  margin-top: 20px;
 }
 
-.content-inner{
-  margin-left: 30px;
+.content-inner {
   margin-top: 5px;
-
-  min-width: 500px;
 }
 
 
-.content{
+.content {
   font-size: 18px;
-  width: 800px;
+  width: auto;
+}
+
+.footer{
+  background-color: #f7f7f7;
+  /*height: 50px;*/
+  margin-top: 10px;
 }
 </style>
