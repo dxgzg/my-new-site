@@ -20,7 +20,7 @@ export default {
   name: "Footer",
   props: {
     writeTime: String,
-    score:Number
+    score:String
   }
 }
 </script>

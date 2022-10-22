@@ -5,46 +5,61 @@
     </h1>
 
     <div class="title-content-outer">
-      <div class="title-content-inner">
-        <h3 class="title">
-          First article第一篇文章两只老虎两只老虎跑得快
+      <div class="title-content-inner" v-for="(item,index) in articleList" :key="index">
+        <h3 class="title" @click="toArticle(item.uid)">
+          {{ item.title }}
         </h3>
         <div class="content-inner">
           <p class="content">
-            hello world!你好~
+            {{ item.content }}
           </p>
 
         </div>
 
-        <Footer writeTime="2022-10-22 14:50" score="5.0"/>
+        <Footer :writeTime=item.writeTime :score="item.score"/>
       </div>
 
-
-      <div class="title-content-inner">
-        <h3 class="title">
-          First article第二篇文章两只老虎两只老虎跑得快
-        </h3>
-        <div class="content-inner">
-
-          <p class="content">
-            hello world!你好~
-          </p>
-
-          <Footer writeTime="2022-10-20 13:11" score="5.0"/>
-        </div>
-      </div>
     </div>
 
   </div>
 </template>
 
 <script>
-import Footer  from "./Footer.vue";
+import Footer from "./Footer.vue";
+
 export default {
   name: "content",
-  components:{
+  components: {
     Footer
+  },
+  methods: {
+    toArticle(uid) {
+      console.log(uid)
+      console.log(typeof uid)
+      this.$router.push(`/article/${uid}`)
+    }
+  },
+  data() {
+    return {
+      articleList: [
+        {
+          uid: 2,
+          title: "First article第一篇文章两只老虎两只老虎跑得快",
+          content: "hello world!你好~",
+          writeTime: "2022-10-22 14:50",
+          score: "5.0"
+        },
+        {
+          uid: 3,
+          title: "First article第二篇文章两只老虎两只老虎跑得快",
+          content: "hello world!你好~",
+          writeTime: "2022-10-20 14:50",
+          score: "4.9"
+        },
+      ]
+    }
   }
+
 }
 </script>
 
@@ -68,7 +83,7 @@ export default {
   min-width: 300px;
 }
 
-.title-content-inner{
+.title-content-inner {
   margin-top: 20px;
   border: 1px solid #ebebeb;
 }
@@ -79,6 +94,11 @@ export default {
   font-family: inherit;
   margin-top: 20px;
   margin-left: 50px;
+  cursor: pointer;
+}
+
+.title:hover {
+  color: #409EFF;
 }
 
 .content-inner {

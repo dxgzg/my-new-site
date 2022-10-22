@@ -1,20 +1,14 @@
 <template>
-  <Header>
-
-  </Header>
-
-  <Content>
-
-  </Content>
+  <Header/>
+  <router-view/>
 </template>
 
 <script>
-import Header  from "./components/Header.vue";
-import Content from "./components/Content.vue";
-import "./assets/css/main.css"
+
+import Header from "./components/Header.vue";
 
 export default {
-  components: {Content, Header}
+  components: { Header}
 }
 
 </script>
