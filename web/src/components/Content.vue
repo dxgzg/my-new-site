@@ -4,51 +4,53 @@
       LIFE
     </h1>
 
-    <div class="title-content">
-      <h3 class="title">
-        First article第一篇文章两只老虎两只老虎跑得快
-      </h3>
-      <div class="content-inner">
+    <div class="title-content-outer">
+      <div class="title-content-inner">
+        <h3 class="title">
+          First article第一篇文章两只老虎两只老虎跑得快
+        </h3>
+        <div class="content-inner">
+          <p class="content">
+            hello world!你好~
+          </p>
 
-        <p class="content">
-          hello world!你好~
-        </p>
+        </div>
 
+        <Footer writeTime="2022-10-22 14:50" score="5.0"/>
       </div>
 
-      <h3 class="title">
-        First article第二篇文章两只老虎两只老虎跑得快
-      </h3>
-      <div class="content-inner">
 
-        <p class="content">
-          hello world!你好~
-        </p>
+      <div class="title-content-inner">
+        <h3 class="title">
+          First article第二篇文章两只老虎两只老虎跑得快
+        </h3>
+        <div class="content-inner">
 
-        <div class="footer">
+          <p class="content">
+            hello world!你好~
+          </p>
 
-          <el-icon>
-            <Calendar />
-          </el-icon>
-          <time>
-          2022-10-20 13:07</time>
+          <Footer writeTime="2022-10-20 13:11" score="5.0"/>
         </div>
       </div>
-
     </div>
 
   </div>
 </template>
 
 <script>
+import Footer  from "./Footer.vue";
 export default {
-  name: "content"
+  name: "content",
+  components:{
+    Footer
+  }
 }
 </script>
 
 <style scoped>
 .main-inner {
-  width: 800px;
+  max-width: 800px;
   margin: 0 auto;
 }
 
@@ -57,19 +59,26 @@ export default {
   margin-left: 30px;
   text-align: center;
   font-family: Georgia;
+  margin-bottom: 20px;
 }
 
-.title-content {
+.title-content-outer {
   margin-left: 100px;
+  max-width: 600px;
+  min-width: 300px;
+}
+
+.title-content-inner{
   margin-top: 20px;
-  min-width: 500px;
+  border: 1px solid #ebebeb;
 }
 
 .title {
-  font-size: 25px;
+  font-size: 20px;
   font-weight: 600;
- font-family:  inherit;
+  font-family: inherit;
   margin-top: 20px;
+  margin-left: 50px;
 }
 
 .content-inner {
@@ -78,13 +87,9 @@ export default {
 
 
 .content {
+  margin-left: 50px;
   font-size: 18px;
   width: auto;
 }
 
-.footer{
-  background-color: #f7f7f7;
-  /*height: 50px;*/
-  margin-top: 10px;
-}
 </style>
