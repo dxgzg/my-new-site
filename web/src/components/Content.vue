@@ -1,14 +1,26 @@
 <template>
   <div class="main-inner">
-    <h1 class="list-title">
-      LIFE
-    </h1>
+
+    <div class="subject-inner">
+      <h1 class="list-title">
+        LIFE
+      </h1>
+<!--      <el-image style="max-width: 600px; height: 300px;z-index: -1;" src='./horse.jpg'-->
+<!--                fit="contain">-->
+<!--      </el-image>-->
+    </div>
 
     <div class="title-content-outer">
       <div class="title-content-inner" v-for="(item,index) in articleList" :key="index">
+
         <h3 class="title" @click="toArticle(item.uid)">
           {{ item.title }}
         </h3>
+
+
+        <el-image style="width: 30px; height: 30px;position: absolute;right: 20px;top:0" src='./dog.jpg' fit="fill"/>
+
+
         <div class="content-inner">
           <p class="content">
             {{ item.content }}
@@ -44,7 +56,7 @@ export default {
       articleList: [
         {
           uid: 2,
-          title: "First article第一篇文章两只老虎两只老虎跑得快",
+          title: "First article第一篇文章两只老虎两只老虎跑得快111111",
           content: "hello world!你好~",
           writeTime: "2022-10-22 14:50",
           score: "5.0"
@@ -69,16 +81,24 @@ export default {
   margin: 0 auto;
 }
 
-.list-title {
+.subject-inner{
+  background-image: url("./horse.jpg") ;
+  height: 300px;
+  max-width: 600px;
   margin-top: 30px;
-  margin-left: 30px;
-  text-align: center;
+  /*center: center / cover no-repeat*/
+  background-size:contain;
+  background-repeat:no-repeat;
+}
+
+.list-title {
+  margin-left: 20px;
   font-family: Georgia;
-  margin-bottom: 20px;
+  font-size: 35px;
 }
 
 .title-content-outer {
-  margin-left: 100px;
+  /*margin-left: 100px;*/
   max-width: 600px;
   min-width: 300px;
 }
@@ -86,6 +106,7 @@ export default {
 .title-content-inner {
   margin-top: 20px;
   border: 1px solid #ebebeb;
+  position: relative;
 }
 
 .title {
@@ -94,6 +115,7 @@ export default {
   font-family: inherit;
   margin-top: 20px;
   margin-left: 50px;
+  margin-right: 50px;
   cursor: pointer;
 }
 
