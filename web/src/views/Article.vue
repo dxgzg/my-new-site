@@ -1,7 +1,6 @@
 <template>
   <div class="inner">
 
-
     <div class="inner-offset">
 
       <h3 class="title">
@@ -17,14 +16,13 @@
           <Clock/>
         </el-icon>
         更新于{{ updateTime }}
-        <br/>
 
-        <div style="margin-top: 5px">
-          <el-icon>
+<!--        <div style="margin-top: 5px">-->
+          <el-icon style="margin-left: 10px">
             <View/>
           </el-icon>
           访问次数: {{ viewNum }}
-        </div>
+<!--        </div>-->
       </div>
 
 
@@ -65,14 +63,14 @@ export default {
 <style scoped>
 .inner {
   max-width: 800px;
-  min-width: 500px;
+  min-width: 300px;
   margin: 50px auto 0px;
 
   border: 1px skyblue solid;
 }
 
 .inner-offset {
-  margin-left: 23%;
+  /*margin-left: 23%;*/
 }
 
 .title {
@@ -85,5 +83,6 @@ export default {
 
 .content {
   margin-top: 40px;
+  line-height: 16px;
 }
 </style>

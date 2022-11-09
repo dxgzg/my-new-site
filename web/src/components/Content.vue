@@ -1,39 +1,36 @@
 <template>
-  <div class="main-inner">
+    <div class="main-inner">
 
-    <div class="subject-inner">
-      <h1 class="list-title">
-        LIFE
-      </h1>
-<!--      <el-image style="max-width: 600px; height: 300px;z-index: -1;" src='./horse.jpg'-->
-<!--                fit="contain">-->
-<!--      </el-image>-->
-    </div>
+      <div class="subject-inner">
+        <h1 class="list-title">
+          LIFE
+        </h1>
+      </div>
 
-    <div class="title-content-outer">
-      <div class="title-content-inner" v-for="(item,index) in articleList" :key="index">
+      <div class="title-content-outer">
+        <div class="title-content-inner" v-for="(item,index) in articleList" :key="index">
 
-        <h3 class="title" @click="toArticle(item.uid)">
-          {{ item.title }}
-        </h3>
+          <h3 class="title" @click="toArticle(item.uid)">
+            {{ item.title }}
+          </h3>
 
 
-        <el-image style="width: 30px; height: 30px;position: absolute;right: 20px;top:0" src='./dog.jpg' fit="fill"/>
+          <el-image style="width: 30px; height: 30px;position: absolute;right: 20px;top:0" src='./dog.jpg' fit="fill"/>
 
 
-        <div class="content-inner">
-          <p class="content">
-            {{ item.content }}
-          </p>
+          <div class="content-inner">
+            <p class="content">
+              {{ item.content }}
+            </p>
 
+          </div>
+
+          <Footer :writeTime=item.writeTime :score="item.score"/>
         </div>
 
-        <Footer :writeTime=item.writeTime :score="item.score"/>
       </div>
 
     </div>
-
-  </div>
 </template>
 
 <script>
@@ -62,7 +59,28 @@ export default {
           score: "5.0"
         },
         {
+          uid: 2,
+          title: "First article第一篇文章两只老虎两只老虎跑得快111111",
+          content: "hello world!你好~",
+          writeTime: "2022-10-22 14:50",
+          score: "5.0"
+        },
+        {
           uid: 3,
+          title: "First article第二篇文章两只老虎两只老虎跑得快",
+          content: "hello world!你好~",
+          writeTime: "2022-10-20 14:50",
+          score: "4.9"
+        },
+        {
+          uid: 4,
+          title: "First article第二篇文章两只老虎两只老虎跑得快",
+          content: "hello world!你好~",
+          writeTime: "2022-10-20 14:50",
+          score: "4.9"
+        },
+        {
+          uid: 4,
           title: "First article第二篇文章两只老虎两只老虎跑得快",
           content: "hello world!你好~",
           writeTime: "2022-10-20 14:50",
@@ -81,14 +99,16 @@ export default {
   margin: 0 auto;
 }
 
-.subject-inner{
-  background-image: url("./horse.jpg") ;
-  height: 300px;
-  max-width: 600px;
-  margin-top: 30px;
-  /*center: center / cover no-repeat*/
-  background-size:contain;
-  background-repeat:no-repeat;
+.subject-inner {
+  background-image: url("./horse2.png");
+  height: 500px;
+  /*height: 100vh;*/
+  top: 58px;
+  width: 100%;
+  left: 0;
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
 }
 
 .list-title {
@@ -101,12 +121,16 @@ export default {
   /*margin-left: 100px;*/
   max-width: 600px;
   min-width: 300px;
+  position: absolute;
+  top: 530px;
 }
 
 .title-content-inner {
   margin-top: 20px;
   border: 1px solid #ebebeb;
   position: relative;
+  height: 180px;
+  background-color: #F2F3F5;
 }
 
 .title {
@@ -124,7 +148,7 @@ export default {
 }
 
 .content-inner {
-  margin-top: 5px;
+  margin-top: 20px;
 }
 
 

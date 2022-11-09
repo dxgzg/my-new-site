@@ -4,14 +4,17 @@
     <el-icon>
       <Calendar/>
     </el-icon>
-    <time>
+    <time class="writeTime">
       {{writeTime}}
     </time>
 
     <el-icon style="margin-left: 20px;margin-right: 0">
       <Star />
     </el-icon>
-    评分{{score}}
+    <span class="score">
+          评分{{score}}
+    </span>
+
   </div>
 </template>
 
@@ -29,7 +32,15 @@ export default {
 .footer {
   /*background-color: #f7f7f7;*/
   /*height: 50px;*/
-  margin-top: 12px;
+  margin-top: 20px;
   margin-left: 50px;
+}
+
+.writeTime{
+  color: #79bbff;
+}
+
+.score{
+  color: #ff7a38;
 }
 </style>
