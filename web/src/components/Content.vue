@@ -1,36 +1,38 @@
 <template>
-    <div class="main-inner">
+  <div class="main-inner">
 
+    <div class="subject-outer">
       <div class="subject-inner">
         <h1 class="list-title">
           LIFE
         </h1>
       </div>
+    </div>
 
-      <div class="title-content-outer">
-        <div class="title-content-inner" v-for="(item,index) in articleList" :key="index">
+    <div class="title-content-outer">
+      <div class="title-content-inner" v-for="(item,index) in articleList" :key="index">
 
-          <h3 class="title" @click="toArticle(item.uid)">
-            {{ item.title }}
-          </h3>
-
-
-          <el-image style="width: 30px; height: 30px;position: absolute;right: 20px;top:0" src='./dog.jpg' fit="fill"/>
+        <h3 class="title" @click="toArticle(item.uid)">
+          {{ item.title }}
+        </h3>
 
 
-          <div class="content-inner">
-            <p class="content">
-              {{ item.content }}
-            </p>
+        <el-image style="width: 30px; height: 30px;position: absolute;right: 20px;top:0" src='./dog.jpg' fit="fill"/>
 
-          </div>
 
-          <Footer :writeTime=item.writeTime :score="item.score"/>
+        <div class="content-inner">
+          <p class="content">
+            {{ item.content }}
+          </p>
+
         </div>
 
+        <Footer :writeTime=item.writeTime :score="item.score"/>
       </div>
 
     </div>
+
+  </div>
 </template>
 
 <script>
@@ -99,16 +101,18 @@ export default {
   margin: 0 auto;
 }
 
-.subject-inner {
-  background-image: url("./horse2.png");
-  height: 500px;
+.subject-outer {
+  background-size: cover;
   /*height: 100vh;*/
-  top: 58px;
-  width: 100%;
-  left: 0;
-  background-size: contain;
-  background-repeat: no-repeat;
   position: absolute;
+  left: 0px;
+  right: 0;
+  background: url("./horse2.png") no-repeat;
+  background-position: 25% 35%;
+  background-size: cover;
+}
+.subject-inner{
+  margin-top: 550px;
 }
 
 .list-title {
@@ -122,7 +126,7 @@ export default {
   max-width: 600px;
   min-width: 300px;
   position: absolute;
-  top: 530px;
+  top: 670px;
 }
 
 .title-content-inner {

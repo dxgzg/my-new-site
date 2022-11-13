@@ -58,8 +58,9 @@ export default {
 
 }
 .header{
-  top: 0;
+  /*top: 1000px;*/
   left: 0;
   font-size: 100px;
+  /*position: fixed;*/
 }
 </style>
