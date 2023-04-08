@@ -7,8 +7,10 @@
       background-color="#f8f8f8"
   >
     <div class="flex-grow" />
+    <el-menu-item index="/">首页</el-menu-item>
     <el-menu-item index="live">生活</el-menu-item>
     <el-menu-item index="tech">技术</el-menu-item>
+    <el-menu-item index="/todoList">todoList</el-menu-item>
     <el-sub-menu index="2">
       <template #title>Workspace</template>
       <el-menu-item index="2-1">item one</el-menu-item>
@@ -45,7 +47,9 @@ export default {
   },
   methods:{
     handleSelect(key,keyPath){
-
+      console.log("key:",key)
+      console.log("keyPath:",keyPath)
+      this.$router.push(key)
     }
   }
 

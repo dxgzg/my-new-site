@@ -7,6 +7,10 @@ const routes = [
         path: "/article/:articleUid",
         props: true,
         component: () => import ("../views/Article.vue")
+    },
+    {
+        path: "/todoList",
+        component: () => import ("../views/todoList.vue")
     }
 ]
 

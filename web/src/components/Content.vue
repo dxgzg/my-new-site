@@ -1,17 +1,19 @@
 <template>
   <div class="main-inner">
 
-    <div class="subject-outer">
-      <div class="subject-inner">
-        <h1 class="list-title">
-          LIFE
-        </h1>
-      </div>
-    </div>
+<!--    <div class="subject-outer">-->
+<!--      <div class="subject-inner">-->
+<!--        <h1 class="list-title">-->
+<!--          LIFE-->
+<!--        </h1>-->
+<!--      </div>-->
+<!--    </div>-->
 
     <div class="title-content-outer">
+
       <div class="title-content-inner" v-for="(item,index) in articleList" :key="index">
 
+        <el-card shadow="hover">
         <h3 class="title" @click="toArticle(item.uid)">
           {{ item.title }}
         </h3>
@@ -21,6 +23,7 @@
 
 
         <div class="content-inner">
+
           <p class="content">
             {{ item.content }}
           </p>
@@ -28,6 +31,7 @@
         </div>
 
         <Footer :writeTime=item.writeTime :score="item.score"/>
+        </el-card>
       </div>
 
     </div>
@@ -125,15 +129,14 @@ export default {
   /*margin-left: 100px;*/
   max-width: 600px;
   min-width: 300px;
-  position: absolute;
-  top: 670px;
+  /*position: absolute;*/
+  /*top: 670px;*/
 }
 
 .title-content-inner {
-  margin-top: 20px;
+  margin-top: 30px;
   border: 1px solid #ebebeb;
   position: relative;
-  height: 180px;
   background-color: #F2F3F5;
 }
 
